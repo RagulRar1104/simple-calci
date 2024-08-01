@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./calculator.css">
+</head>
+<body>
+    <div class="calci ">
+<div class="inputbox">
+    <input type="number" id="num1" class="num1" placeholder="INPUT A NUMBER">
+    <input type="number" id="num2" class="num2" placeholder="INPUT A NUMBER">
+    <br>
+    <input type="number" id="result" class="result" placeholder="A N S W E R ">
+</div>
+<br>
+<div class="full">
+<button onclick="calculate('add')" class="button-78" role="button">+</button>
+<button onclick="calculate('subtract')" class="button-78" role="button">-</button>
+<button onclick="calculate('multiply')" class="button-78" role="button">*</button>
+<button onclick="calculate('divide')" class="button-78" role="button">/</button>
+<button onclick="calculate('modulus')"class="button-78" role="button">%</button>
+</div>
+<br>
+<div class="caldiv">
+<button class="button-85" role="button">MINI CALCULATOR</button>
+</div>
+</div>
+<script>
+    function calculate(operation) {
+    var num1 = parseFloat(document.getElementById('num1').value);
+    var num2 = parseFloat(document.getElementById('num2').value);
+    var result = document.getElementById('result');
+
+    if (isNaN(num1) || isNaN(num2)) {
+    } else {
+        if (operation === 'add') {
+            result.value = num1 + num2;
+        } else if (operation === 'subtract') {
+            result.value = num1 - num2;
+        } else if (operation === 'multiply') {
+            result.value = num1 * num2;
+        } else if (operation === 'divide') {
+            if (num2 === 0) {
+            } else {
+                result.value = num1 / num2;
+            }
+        } else if (operation === 'modulus') {
+            result.value = num1 % num2;
+        } else {
+        }
+    }
+}
+
+</script>
+</body>
+</html>
